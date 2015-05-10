@@ -1,0 +1,8 @@
+ru:
+  games:
+    new:
+      create_game: 'Создать игру'
+      title: 'Название игры'
+    form:
+      title: 'Название'
+

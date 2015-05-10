@@ -1,0 +1,15 @@
+ru:
+  mongoid:
+    errors:
+      models:
+        game:
+          attributes:
+            title:
+              blank: 'не может быть пустым'
+              taken: 'уже существует'
+
+    models:
+      game: 'Игру'
+    attributes:
+      game:
+        title: 'Название'

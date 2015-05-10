@@ -26,6 +26,7 @@ gem "mongoid", "~> 4.0.0"
 gem 'devise'
 gem 'kaminari'
 gem 'sidekiq'
+gem "cocoon"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -51,6 +52,7 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :development do

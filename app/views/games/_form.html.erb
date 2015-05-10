@@ -1,0 +1,14 @@
+<%= form_for @game do |f| %>
+  <%= f.text_field :title, placeholder: t('.title') %><br />
+  <%= f.select :players_amount, (1..10) %><br />
+  <div id='tasks'>
+    <%= f.fields_for :events do |event| %>
+      <%= render 'event_fields', f: event %>
+      <div class='links'>
+        <%= link_to_add_association 'add event', f, :events %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
