@@ -2,7 +2,11 @@ ru:
   games:
     new:
       create_game: 'Создать игру'
+      edit_game: 'Редактировать игру'
       title: 'Название игры'
     form:
       title: 'Название'
+      add_event: 'Добавить сессию'
+    event_fields:
+      remove_event: 'Удалить сессию'
 

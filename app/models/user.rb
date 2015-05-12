@@ -41,4 +41,8 @@ class User
   field :bio, type: String
 
   has_many :subscriptions, dependent: :delete
+
+  def mastered_games
+    Game.where(:id.in => subscriptions.where(user_id: self.id, user_role: Subscription::USER_ROLE[:master]).map(&:game_id))
+  end
 end

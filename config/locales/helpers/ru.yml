@@ -2,3 +2,4 @@ ru:
   helpers:
     submit:
       create: 'Создать %{model}'
+      update: 'Обновить %{model}'

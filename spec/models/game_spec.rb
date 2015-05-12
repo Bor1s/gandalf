@@ -21,7 +21,7 @@ RSpec.describe Game, type: :model do
     end
 
     it 'user with master role' do
-      expect { subject.subscribe(user, :master) }.to change(Subscription, :count).by(1)
+      expect { subject.subscribe(user, role: :master) }.to change(Subscription, :count).by(1)
     end
   end
 
@@ -31,7 +31,7 @@ RSpec.describe Game, type: :model do
   end
 
   it '#master assumes to return game master' do
-    subject.subscribe(user, :master)
+    subject.subscribe(user, role: :master)
     expect(subject.master).to eq user
   end
 
@@ -42,7 +42,7 @@ RSpec.describe Game, type: :model do
 
   it '#subscribers assumes to return all subscribers' do
     subject.subscribe(user)
-    subject.subscribe(FactoryGirl.create(:user), :master)
+    subject.subscribe(FactoryGirl.create(:user), role: :master)
     expect(subject.subscribers.count).to eq 2
   end
 

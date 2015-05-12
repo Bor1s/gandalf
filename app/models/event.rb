@@ -4,6 +4,7 @@ class Event
 
   field :beginning_at, type: DateTime
   field :description, type: String
+  mount_uploader :poster, PosterUploader
 
   belongs_to :game
   has_one :location, dependent: :destroy

@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require cocoon
+//= require jquery.datetimepicker
 //= require_tree .

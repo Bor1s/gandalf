@@ -8,11 +8,11 @@ class Game
   has_many :subscriptions, dependent: :delete
   has_many :events, dependent: :destroy
 
-  accepts_nested_attributes_for :events, allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :events, allow_destroy: true
 
   validates :title, presence: true, uniqueness: true
 
-  def subscribe(user, role=:player)
+  def subscribe(user, role: :player)
     subscriptions.create(user_id: user.id, user_role: Subscription::USER_ROLE[role]) unless user_subscribed?(user)
   end
 

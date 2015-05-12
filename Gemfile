@@ -27,6 +27,9 @@ gem 'devise'
 gem 'kaminari'
 gem 'sidekiq'
 gem "cocoon"
+gem 'jquery-datetimepicker-rails'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'mini_magick'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
