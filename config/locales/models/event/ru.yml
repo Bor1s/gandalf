@@ -1,0 +1,14 @@
+ru:
+  mongoid:
+    errors:
+      models:
+        event:
+          attributes:
+            beginning_at:
+              blank: 'не может быть пустым'
+
+    models:
+      event: 'Сессии'
+    attributes:
+      event:
+        beginning_at: 'Начало'

@@ -1,2 +1,40 @@
 ru:
-  hello: 'Привет'
+  datetime:
+      dotiw:
+        seconds:
+          one:   "%{count} секунда"
+          few:   "%{count} секунды"
+          many:  "%{count} секунд"
+          other: "%{count} секунды"
+        minutes:
+          one:   "%{count} минута"
+          few:   "%{count} минуты"
+          many:  "%{count} минут"
+          other: "%{count} минуты"
+        hours:
+          one:   "%{count} час"
+          few:   "%{count} часа"
+          many:  "%{count} часов"
+          other: "%{count} часа"
+        days:
+          #one:   "%{count} день"
+          one:   "завтра"
+          few:   "через %{count} дня"
+          many:  "через %{count} дней"
+          other: "через %{count} дня"
+        weeks:
+          one:   "через %{count} неделя"
+          few:   "через %{count} недели"
+          many:  "через %{count} недель"
+          other: "через %{count} недели"
+        months:
+          one:   "через %{count} месяц"
+          few:   "через %{count} месяца"
+          many:  "через %{count} месяцев"
+          other: "через %{count} месяца"
+        years:
+          one:   "%{count} год"
+          few:   "%{count} года"
+          many:  "%{count} лет"
+          other: "%{count} года"
+        less_than_x: "меньше, чем %{distance}"

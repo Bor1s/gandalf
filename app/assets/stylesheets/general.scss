@@ -1,0 +1,69 @@
+// Basic ovverrdies
+
+html, body {
+  height: 100%;
+}
+
+h3 {
+  margin-top: 10px;
+}
+
+nav {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.nav-pills > li > a {
+  border-radius: 0;
+}
+
+.nav > li > a {
+  padding: 0;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.nav > li.active > a,
+.nav > li.active > a:focus,
+.nav > li.active > a:hover {
+  color: $accent;
+  background-color: transparent;
+  border-bottom: 3px solid $accent;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
+}
+
+footer {
+  height: 10%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: $primary;
+  color: $light-primary;
+}
+// -----------------
+
+// Custom classes
+.navigation {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.wrapper {
+  min-height: 90%;
+  height: auto !important;
+  height: 90%;
+  padding-bottom: 60px;
+}
+
+.group {
+  margin-top: 48px;
+}
+
+.logo {
+  font-family: fantasy;
+}

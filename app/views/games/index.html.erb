@@ -1,1 +1,16 @@
-Hello world
+<% @events.group_by {|e| e.beginning_at.to_date}.each do |day, events| %>
+  <div class='row'>
+    <div class='col-md-12 group'>
+      <center>
+        <p class='lead'>
+          <strong class='text-capitalize'>
+            <%= l(day, format: '%d %b') %>
+          </strong>
+        </p>
+      </center>
+    </div>
+    <% events.each do |event| %>
+      <%= render event.game, event: event %>
+    <% end %>
+  </div>
+<% end %>

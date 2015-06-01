@@ -3,6 +3,8 @@ class GamesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    #TODO Create service
+    @events = Event.upcoming.asc('beginning_at')
   end
 
   def new

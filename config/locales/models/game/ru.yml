@@ -7,9 +7,12 @@ ru:
             title:
               blank: 'не может быть пустым'
               taken: 'уже существует'
+            events:
+              invalid: 'содержат ошибки'
 
     models:
       game: 'Игру'
     attributes:
       game:
         title: 'Название'
+        events: 'Игровые cессии'

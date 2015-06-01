@@ -98,6 +98,9 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dotiw (3.0.1)
+      actionpack (>= 3)
+      i18n
     erubis (2.7.0)
     execjs (2.5.2)
     factory_girl (4.5.0)
@@ -107,6 +110,8 @@ GEM
       railties (>= 3.0.0)
     faker (1.4.3)
       i18n (~> 0.5)
+    font-awesome-sass (4.3.2.1)
+      sass (~> 3.2)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     hitimes (1.2.2)
@@ -182,6 +187,9 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails-i18n (4.0.4)
+      i18n (~> 0.6)
+      railties (~> 4.0)
     railties (4.2.1)
       actionpack (= 4.2.1)
       activesupport (= 4.2.1)
@@ -277,9 +285,11 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.1.0)
   devise
+  dotiw
   execjs
   factory_girl_rails
   faker
+  font-awesome-sass
   jbuilder (~> 2.0)
   jquery-datetimepicker-rails
   jquery-rails
@@ -288,6 +298,7 @@ DEPENDENCIES
   mongoid (~> 4.0.0)
   pry-rails
   rails (= 4.2.1)
+  rails-i18n (~> 4.0.0)
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
