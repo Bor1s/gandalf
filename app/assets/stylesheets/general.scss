@@ -39,9 +39,7 @@ nav {
 }
 
 footer {
-  height: 10%;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  height: 10em;
   background-color: $primary;
   color: $light-primary;
 }
@@ -54,10 +52,14 @@ footer {
 }
 
 .wrapper {
-  min-height: 90%;
-  height: auto !important;
-  height: 90%;
-  padding-bottom: 60px;
+  min-height: 100%;
+  margin-bottom: -10em;
+}
+
+.wrapper:after {
+  content: "";
+  display: block;
+  height: 10em;
 }
 
 .group {
@@ -66,4 +68,8 @@ footer {
 
 .logo {
   font-family: fantasy;
+}
+
+.day {
+  border-bottom: 1px solid $light-primary;
 }
