@@ -16,4 +16,5 @@
 //= require bootstrap-sprockets
 //= require cocoon
 //= require jquery.datetimepicker
+//= require select2
 //= require_tree .

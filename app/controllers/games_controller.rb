@@ -36,7 +36,7 @@ class GamesController < ApplicationController
   private
 
   def game_attributes
-    params.require(:game).permit(:title, :players_amount, 
+    params.require(:game).permit(:title, :players_amount, :game_system_id,
                                  events_attributes: [:id, :_destroy, :beginning_at,
                                                      :description, :poster, :poster_cache,
                                                      :remove_poster])

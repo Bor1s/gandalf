@@ -7,6 +7,7 @@ class Game
   
   has_many :subscriptions, dependent: :delete
   has_many :events, dependent: :destroy
+  belongs_to :game_system
 
   accepts_nested_attributes_for :events, allow_destroy: true
 

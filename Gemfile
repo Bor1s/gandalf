@@ -33,6 +33,8 @@ gem 'mini_magick'
 gem 'font-awesome-sass'
 gem 'dotiw'
 gem 'rails-i18n', '~> 4.0.0'
+gem 'devise-i18n'
+gem "select2-rails"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

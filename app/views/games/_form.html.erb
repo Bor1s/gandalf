@@ -1,6 +1,7 @@
 <%= form_for @game, html: {multipart: true} do |f| %>
   <%= f.text_field :title, placeholder: t('.title') %><br />
   <%= f.select :players_amount, (1..10) %><br />
+  <%= f.select :game_system_id, GameSystem.all.map {|g| [g.name, g.id]} %><br />
   <div id='tasks'>
     <%= f.fields_for :events do |event| %>
       <%= render 'event_fields', f: event %>

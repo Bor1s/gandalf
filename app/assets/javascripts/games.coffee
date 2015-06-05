@@ -4,9 +4,11 @@
 
 $ ->
   initDatepicker()
+  initSelect2()
 
 $(document).on 'page:load', ->
   initDatepicker()
+  initSelect2()
 
 $(document).on 'cocoon:after-insert', ->
   initDatepicker()
@@ -18,3 +20,6 @@ initDatepicker = ->
     format: 'd-m-Y H:i'
     dayOfWeekStart: 1
   )
+
+initSelect2 = ->
+  $('#game_game_system_id').select2()

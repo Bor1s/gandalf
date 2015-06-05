@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+['Dungeons & Dragons Next', 'GURPS', 'HeroQuest II', 'Pathfinder'].each do |name|
+  GameSystem.create(name: name) unless GameSystem.where(name: name).exists?
+end
