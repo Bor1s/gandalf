@@ -6,17 +6,22 @@
       <%= devise_error_messages! %>
 
       <div class="form-group">
-        <%= f.label :email %><br />
+        <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= f.label :nickname, 'Никнэйм' %><br />
+        <%= f.label :nickname, 'Никнэйм' %>
         <%= f.text_field :nickname, class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= f.label :bio, 'О себе' %><br />
+        <%= f.label :timezone %>
+        <%= f.select :timezone, ActiveSupport::TimeZone.all.map {|z| [to_utc_string(z), z.name]}, {}, class: 'select2 form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :bio, 'О себе' %>
         <%= f.text_area :bio, class: 'form-control' %>
       </div>
 
@@ -25,17 +30,17 @@
       <% end %>
 
       <div class="form-group">
-        <%= f.label :password, 'Пароль' %> <i>(оставьте пустым что бы не менять)</i><br />
+        <%= f.label :password, 'Пароль' %> <i>(оставьте пустым что бы не менять)</i>
         <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= f.label :password_confirmation, 'Подтвердите пароль' %><br />
+        <%= f.label :password_confirmation, 'Подтвердите пароль' %>
         <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= f.label :current_password, 'Текущий пароль' %> <i>(нужен для подтверждения ваших текущих изменений)</i><br />
+        <%= f.label :current_password, 'Текущий пароль' %> <i>(нужен для подтверждения ваших текущих изменений)</i>
         <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
       </div>
 

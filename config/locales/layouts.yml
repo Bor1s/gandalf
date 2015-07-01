@@ -1,0 +1,5 @@
+ru:
+  layouts:
+    application:
+      games: 'Игры'
+      people: 'Люди'

@@ -1,14 +1,14 @@
 <div class='col-md-4'>
   <article>
     <h4><%= link_to game.title, game_path(game) %></h4>
-    <span class='pull-right'>
+    <span class='pull-right' data-toggle="tooltip" title='<%= t('.help.start_date') %>'>
       <i class='fa fa-clock-o'></i> <%= event.beginning_at.to_s(:time) %>
     </span>
-    <p class='text-muted'><em><%= game.master.nickname || game.master.email %></em></p>
+    <p class='text-muted'><em><%= t('.by') %> <%= game.master.nickname || game.master.email %></em></p>
     <p><%= event.description %></p>
     <p>
-      <span class='pull-left'><i class='fa fa-users'></i> <%= game.players.count %></span>
-      <span class='pull-right'><i class='fa fa-gear'></i> <%= game.game_system.name %></span>
+      <span data-toggle="tooltip" title='<%= t('.help.players') %>' class='pull-left'><i class='fa fa-users'></i> <%= game.players.count %></span>
+      <span data-toggle="tooltip" title='<%= t('.help.system') %>' class='pull-right'><i class='fa fa-gear'></i> <%= game.game_system.name %></span>
     </p>
   </article>
 </div>

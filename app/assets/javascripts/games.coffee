@@ -5,10 +5,12 @@
 $ ->
   initDatepicker()
   initSelect2()
+  initTooltips()
 
 $(document).on 'page:load', ->
   initDatepicker()
   initSelect2()
+  initTooltips()
 
 $(document).on 'cocoon:after-insert', ->
   initDatepicker()
@@ -22,4 +24,7 @@ initDatepicker = ->
   )
 
 initSelect2 = ->
-  $('#game_game_system_id').select2()
+  $('.select2').select2()
+
+initTooltips = ->
+  $('[data-toggle="tooltip"]').tooltip()

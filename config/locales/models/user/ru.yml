@@ -1,0 +1,7 @@
+ru:
+  mongoid:
+    attributes:
+      user:
+        current_password: 'Текущий пароль'
+        timezone: 'Ваша текущая таймзона'
+

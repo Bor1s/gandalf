@@ -16,3 +16,5 @@ ru:
       game:
         title: 'Название'
         events: 'Игровые cессии'
+        players_amount: 'Количество игроков'
+        game_system_id: 'Система правил'

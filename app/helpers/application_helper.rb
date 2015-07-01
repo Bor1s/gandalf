@@ -32,4 +32,9 @@ module ApplicationHelper
   def active?(path)
     'active' if current_page?(path)
   end
+
+  def to_utc_string(zone)
+    positive_prefix = "+" if zone.utc_offset > 0
+    "#{zone.name} (#{positive_prefix}#{(zone.utc_offset / 60 / 60).to_s} UTC)"
+  end
 end

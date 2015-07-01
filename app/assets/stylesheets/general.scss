@@ -2,6 +2,7 @@
 
 html, body {
   height: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 h3 {
@@ -40,6 +41,7 @@ nav {
 
 footer {
   height: 10em;
+  margin-top: 2em;
   background-color: $primary;
   color: $light-primary;
 }
@@ -72,4 +74,9 @@ footer {
 
 .day {
   border-bottom: 1px solid $light-primary;
+}
+
+// tooltips
+[data-toggle="tooltip"] {
+  cursor: help;
 }

@@ -13,6 +13,13 @@ RSpec.describe GamesController, type: :controller do
     end
   end
 
+  describe 'GET #show' do
+    it 'assigns game instance' do
+      get :show, { id: FactoryGirl.create(:game) }
+      expect(assigns(:game)).to be
+    end
+  end
+
   describe 'GET #new' do
     it 'renders template for registered users' do
       expect(get :new).to render_template(:new)

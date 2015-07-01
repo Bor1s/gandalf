@@ -7,6 +7,10 @@ class GamesController < ApplicationController
     @events = Event.upcoming.asc('beginning_at')
   end
 
+  def show
+    @game = Game.find(params[:id])
+  end
+
   def new
     @game = Game.new
     @game.events.build

@@ -11,4 +11,6 @@ ru:
       event: 'Сессии'
     attributes:
       event:
-        beginning_at: 'Начало'
+        beginning_at: 'Дата и время начала'
+        description: 'Описание сессии'
+        poster: 'Постер'
