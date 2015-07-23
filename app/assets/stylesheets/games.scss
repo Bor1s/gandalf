@@ -3,7 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .nested-fields {
-  margin-bottom: 4em;
+  padding: 1.5em;
+  border: 1px dashed $divider;
+  &:not(:first-child) {
+    border-top: 0;
+  }
 }
 
 .bordered {
