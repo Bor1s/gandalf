@@ -5,7 +5,7 @@
       <i class='fa fa-clock-o'></i> <%= event.beginning_at.to_s(:time) %>
     </span>
     <p class='text-muted'><em><%= t('.by') %> <%= game.master.nickname || game.master.email %></em></p>
-    <p><%= event.description %></p>
+    <p class='pre-wrap'><%= event.description %></p>
     <p>
       <span data-toggle="tooltip" title='<%= t('.help.players') %>' class='pull-left'><i class='fa fa-users'></i> <%= game.players.count %></span>
       <span data-toggle="tooltip" title='<%= t('.help.system') %>' class='pull-right'><i class='fa fa-gear'></i> <%= game.game_system.name %></span>

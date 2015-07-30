@@ -36,6 +36,7 @@ class User
   # field :locked_at,       type: Time
 
   # === Application logic ===
+  attr_accessor :current_password
   field :timezone, type: String
   field :nickname, type: String
   field :bio, type: String
@@ -44,5 +45,10 @@ class User
 
   def mastered_games
     Game.where(:id.in => subscriptions.where(user_id: self.id, user_role: Subscription::USER_ROLE[:master]).map(&:game_id))
+  end
+
+  # TODO Write specs
+  def creator?(game)
+    subscriptions.where(game_id: game.id, user_role: Subscription::USER_ROLE[:master]).first.present?
   end
 end

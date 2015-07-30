@@ -1,15 +1,17 @@
 ru:
   application:
+    signin:
+      signin: 'Вход'
+      register: 'Регистрация'
     management_panel:
       edit: 'Редактировать игру'
+      enroll: 'Присоединиться'
+      unenroll: 'Покинуть игру'
   games:
     new:
       create_game: 'Создать игру'
       edit_game: 'Редактировать игру'
       title: 'Название игры'
-    show:
-      register: 'Регистрация'
-      signin: 'Вход'
     form:
       title: 'Название'
       add_event: 'Добавить сессию'

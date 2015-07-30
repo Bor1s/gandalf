@@ -2,8 +2,8 @@
   <p><%= link_to t('.edit'), edit_game_path(game), class: 'btn btn-warning btn-sm' %></p>
 <% else %>
   <% if game.user_subscribed?(current_user) %>
-    <%= link_to t('.unsubscribe'), 'TODO', class: 'btn btn-danger btn-sm' %>
+    <%= button_to t('.unenroll'), unenroll_game_path(game), method: :delete, class: 'btn btn-danger btn-sm' %>
   <% else %>
-    <%= link_to t('.subscribe'), 'TODO', class: 'btn btn-success btn-sm' %>
+    <%= button_to t('.enroll'), enroll_game_path(game), class: 'btn btn-success btn-sm' %>
   <% end %>
 <% end %>

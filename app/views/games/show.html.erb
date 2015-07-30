@@ -9,7 +9,7 @@
         <p class='text-right'>
           <b><%= l event.beginning_at, format: :short %></b>
         </p>
-        <p>
+        <p class='pre-wrap'>
           <%= event.description %>
         </p>
       </article>
@@ -20,7 +20,7 @@
     <% if user_signed_in? %>
       <%= render 'management_panel', game: @game %>
     <% else %>
-      <%= link_to t('.signin'), new_user_session_path %> | <%= link_to t('.register'), new_user_registration_path %>
+      Войдите или зарегистрируйтесь для управления игрой.
     <% end %>
   </div>
 </div>

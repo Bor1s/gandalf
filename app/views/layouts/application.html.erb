@@ -16,11 +16,11 @@
   <div class='container'>
     <div class='row navigation'>
       <div class='col-md-10'>
-        <h3 class='pull-left logo'>AdventureKit</h3>
+        <h3 class='pull-left logo'><%= link_to 'AdventureKit', root_path %></h3>
         <nav role="navigation" class='pull-right'>
           <ul class='nav nav-pills'>
             <li class='<%= active?(games_path) %>'><%= link_to t('.games'), games_path %></li>
-            <li class='<%= active?('') %>'><%= link_to t('.people'), root_path %></li>
+            <!--<li class='<%#= active?('') %>'><%#= link_to t('.people'), root_path %></li>-->
 
             <% if user_signed_in? %>
               <li class='<%= active?('') %>'>
@@ -34,6 +34,8 @@
                   <i class='fa fa-sign-out'></i>
                 <% end %>
               </li>
+            <% else %>
+              <%= render 'signin' %>
             <% end %>
           </ul>
         </nav>
@@ -51,7 +53,9 @@
 </div>
 
 <footer>
-  <center>AdventureKit 2015</center>
+  <div>
+    <p class='text-left'>© 2015 AdventureKit</p>
+  </div>
 </footer>
 
 </body>

@@ -37,6 +37,22 @@ class GamesController < ApplicationController
     respond_with @game
   end
 
+  def enroll
+    @game = Game.find(params[:id])
+    respond_with @game do |format|
+      @game.subscribe(current_user)
+      format.html {redirect_to game_path(@game)}
+    end
+  end
+
+  def unenroll
+    @game = Game.find(params[:id])
+    @game.redeem(current_user) unless current_user.creator?(@game)
+    respond_with @game do |format|
+      format.html {redirect_to game_path(@game)}
+    end
+  end
+
   private
 
   def game_attributes

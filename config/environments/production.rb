@@ -85,5 +85,12 @@ Rails.application.configure do
     authentication:       'plain',
     enable_starttls_auto: true }
 
+  config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :email_prefix => "",
+    :sender_address => %{"notifier" <noreply.playhardrpg@gmail.com>},
+    :exception_recipients => %w{boris.bbk@gmail.com}
+  }
+
   config.action_mailer.default_url_options = { host: 'adventurekit.org' }
 end

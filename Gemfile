@@ -35,12 +35,13 @@ gem 'dotiw'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'devise-i18n'
 gem "select2-rails"
+gem 'exception_notification'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -68,6 +69,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano-sidekiq'
+  gem 'better_errors'
 end
 
 group :production do
