@@ -9,6 +9,7 @@ set :rbenv_ruby, '2.1.2'
 
 set :branch, 'master'
 
+set :bundle_binstubs, -> { shared_path.join('bin') }
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 
 set :keep_releases, 2
@@ -171,6 +172,7 @@ namespace :deploy do
     end
   end
 
-  before :finishing, :reboot_solr
-  after :finishing, :reindex_solr
+  #TODO uncomment when Solr work
+  #before :finishing, :reboot_solr
+  #after :finishing, :reindex_solr
 end
