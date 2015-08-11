@@ -43,6 +43,10 @@ class User
 
   has_many :subscriptions, dependent: :delete
 
+  def games
+    Game.where(:id.in => subscriptions.where(user_id: self.id).map(&:game_id))
+  end
+
   def mastered_games
     Game.where(:id.in => subscriptions.where(user_id: self.id, user_role: Subscription::USER_ROLE[:master]).map(&:game_id))
   end
