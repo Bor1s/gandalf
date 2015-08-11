@@ -65,7 +65,7 @@
         </tr>
       </thead>
       <tbody>
-        <% current_user.mastered_games.each do |game| %>
+        <% current_user.games.each do |game| %>
           <tr id='<%= game.id %>'>
             <td><%= link_to game.title, game_path(game) %></td>
             <td>
