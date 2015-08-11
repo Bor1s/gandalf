@@ -47,6 +47,10 @@ class User
     Game.where(:id.in => subscriptions.where(user_id: self.id, user_role: Subscription::USER_ROLE[:master]).map(&:game_id))
   end
 
+  def playable_games
+    Game.where(:id.in => subscriptions.where(user_id: self.id, user_role: Subscription::USER_ROLE[:player]).map(&:game_id))
+  end
+
   # TODO Write specs
   def creator?(game)
     subscriptions.where(game_id: game.id, user_role: Subscription::USER_ROLE[:master]).first.present?

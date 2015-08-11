@@ -55,6 +55,45 @@
   </div>
 
   <div class='col-md-5 col-md-offset-1'>
+    <h2>Мои игры</h2>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>Название игры</th>
+          <th>Роль</th>
+          <th>Действия</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_user.mastered_games.each do |game| %>
+          <tr id='<%= game.id %>'>
+            <td><%= link_to game.title, game_path(game) %></td>
+            <td>
+              <% if current_user.creator?(game) %>
+                <span class="label label-warning">Мастер</span>
+              <% else %>
+                <span class="label label-success">Игрок</span>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to edit_game_path(game), class: 'btn btn-xs btn-warning' do %>
+                <i class='fa fa-pencil'></i>
+              <% end %>
+
+              <%= link_to game_path(game), class: 'btn btn-xs btn-danger',
+                method: :delete, remote: true, data: {confirm: 'Вы уверены? Это действие нельзя будет отменить'} do %>
+                <i class='fa fa-trash'></i>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
+  </div>
+
+  <div class='col-md-5 col-md-offset-1'>
     <h2>Удалить мой аккаунт</h2>
 
     <p><%= button_to "Удалить", registration_path(resource_name), data: { confirm: "Вы уверены? Это действие нельзя будет отменить" }, method: :delete, class: 'btn btn-danger btn-sm' %></p>

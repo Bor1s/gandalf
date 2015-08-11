@@ -1,4 +1,5 @@
 <% if @events.present? %>
+  <%= link_to t('.new_game'), new_game_path, class: 'btn btn-success' if user_signed_in? %>
   <% @events.group_by {|e| e.beginning_at.to_date}.each do |day, events| %>
     <div class='row'>
       <div class='col-md-12 group'>
@@ -18,7 +19,10 @@
 <% else %>
   <div class='row'>
     <div class='col-md-12 text-center'>
-      <%= t('.no_games') %>
+      <%= t('.no_games') %> 
+      <% if user_signed_in? %>
+        <%= link_to t('.create_game'), new_game_path %>
+      <% end %>
     </div>
   </div>
 <% end %>

@@ -20,7 +20,9 @@ ru:
     event_fields:
       remove_event: 'Удалить сессию'
     index:
-      no_games: 'На ближайшее время игр не запланировано'
+      new_game: 'Создать игру'
+      no_games: 'На ближайшее время игр не запланировано.'
+      create_game: 'Создайте свою'
     game:
       by: 'мастер'
       help:
