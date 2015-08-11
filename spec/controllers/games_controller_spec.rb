@@ -43,18 +43,41 @@ RSpec.describe GamesController, type: :controller do
   end
 
   describe 'PATCH #update' do
-    it 'redirects to #show after game is successfuly updated' do
-      game = FactoryGirl.create(:game_with_upcoming_events)
+    context 'success' do
+      it 'redirects to #show after game is successfuly updated' do
+        game = FactoryGirl.create(:game_with_upcoming_events)
+        game.subscribe(controller.current_user, role: :master)
 
-      params = {id: game.id, game: {title: "#{game.title} updated"}}
-      expect(patch :update, params).to redirect_to(game_path(game))
+        params = {id: game.id, game: {title: "#{game.title} updated"}}
+        expect(patch :update, params).to redirect_to(game_path(game))
+      end
+    end
+
+    context 'fails' do
+      it 'with NotAuthorized error' do
+        game = FactoryGirl.create(:game_with_upcoming_events)
+
+        params = {id: game.id, game: {title: "#{game.title} updated"}}
+        expect { patch :update, params }.to raise_error(ApplicationController::NotAuthorized)
+      end
     end
   end
 
   describe 'DELETE #destroy' do
-    it 'redirects to #index after game is successfuly removed' do
-      game = FactoryGirl.create(:game_with_upcoming_events)
-      expect(delete :destroy, id: game.id).to redirect_to(games_path)
+    context 'success' do
+      it 'redirects to #index after game is successfuly removed' do
+        game = FactoryGirl.create(:game_with_upcoming_events)
+        game.subscribe(controller.current_user, role: :master)
+        expect(delete :destroy, id: game.id).to redirect_to(games_path)
+      end
+    end
+
+    context 'fail' do
+      it 'with NotAuthorized error' do
+        game = FactoryGirl.create(:game_with_upcoming_events)
+        game.subscribe(controller.current_user, role: :master)
+        expect(delete :destroy, id: game.id).to redirect_to(games_path)
+      end
     end
   end
 end

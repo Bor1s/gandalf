@@ -23,16 +23,19 @@ class GamesController < ApplicationController
 
   def edit
     @game = current_user.mastered_games.find(params[:id])
+    raise NotAuthorized unless current_user.creator?(@game)
   end
 
   def update
     @game = current_user.mastered_games.find(params[:id])
+    raise NotAuthorized unless current_user.creator?(@game)
     @game.update_attributes(game_attributes)
     respond_with @game
   end
 
   def destroy
     @game = current_user.mastered_games.find(params[:id])
+    raise NotAuthorized unless current_user.creator?(@game)
     @game.destroy
     respond_with @game
   end
