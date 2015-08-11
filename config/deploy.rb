@@ -5,7 +5,7 @@ set :application, 'gabdalf'
 set :repo_url, 'git@github.com:Bor1s/gandalf.git'
 
 set :rbenv_type, :user
-set :rbenv_ruby, '2.1.2'
+set :rbenv_ruby, '2.2.2'
 
 set :branch, 'master'
 
