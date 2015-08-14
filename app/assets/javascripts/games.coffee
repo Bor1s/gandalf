@@ -21,6 +21,7 @@ initDatepicker = ->
     defaultDate: new Date()
     format: 'd-m-Y H:i'
     dayOfWeekStart: 1
+    lazyInit: true
   )
 
 initSelect2 = ->
