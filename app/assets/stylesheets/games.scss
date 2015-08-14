@@ -20,5 +20,18 @@
   img {
     float: left;
     margin-right: 10px;
+    margin-bottom: 10px;
   }
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.side-header {
+  margin-top: 40px;
+  color: $dark-primary;
+  padding-bottom: 2px;
+  border-bottom: 2px solid $dark-primary;
 }
