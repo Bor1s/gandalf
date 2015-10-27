@@ -1,11 +1,11 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'gabdalf'
+set :application, 'gandalf'
 set :repo_url, 'git@github.com:Bor1s/gandalf.git'
 
 set :rbenv_type, :user
-set :rbenv_ruby, '2.2.2'
+set :rbenv_ruby, '2.2.3'
 
 set :branch, 'master'
 
@@ -155,6 +155,7 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       if test "[ -f #{fetch(:deploy_to)}/shared/tmp/pids/unicorn.pid ]"
         stop_unicorn
+        run_unicorn
       else
         run_unicorn
       end
