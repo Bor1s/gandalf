@@ -7,7 +7,7 @@
     <p class='text-muted'><em><%= t('.by') %> <%= game.master.nickname || game.master.email %></em></p>
     <p class='pre-wrap'><%= event.description %></p>
     <p>
-      <span data-toggle="tooltip" title='<%= t('.help.players') %>' class='pull-left'><i class='fa fa-users'></i> <%= game.players.count %></span>
+    <span data-toggle="tooltip" title='<%= t('.help.players') %>' class='pull-left'><i class='fa fa-users'></i> <%= game.players.count %> / <%= game.players_amount %></span>
       <span data-toggle="tooltip" title='<%= t('.help.system') %>' class='pull-right'><i class='fa fa-gear'></i> <%= game.game_system.name %></span>
     </p>
   </article>
