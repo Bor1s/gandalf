@@ -36,6 +36,7 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'devise-i18n'
 gem "select2-rails"
 gem 'exception_notification'
+gem 'rsolr'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -70,6 +71,9 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano-sidekiq'
   gem 'better_errors'
+
+  gem 'sunspot_rails'
+  gem 'sunspot_solr'
 end
 
 group :production do

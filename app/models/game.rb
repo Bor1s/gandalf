@@ -1,10 +1,11 @@
 class Game
   include Mongoid::Document
   include Mongoid::Timestamps
+  include SolrService::MongoidHooks
 
   field :title, type: String
   field :players_amount, type: Integer, default: 0
-  
+
   has_many :subscriptions, dependent: :delete
   has_many :events, dependent: :destroy
   belongs_to :game_system
@@ -38,5 +39,12 @@ class Game
 
   def subscribers
     User.where(:id.in => subscriptions.map(&:user_id))
+  end
+
+  # NOTE Fileds to be indexed by Solr
+  def solr_index_data
+    data = {id: self.id}
+    data[:ctext] = self.title
+    data
   end
 end

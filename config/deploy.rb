@@ -173,7 +173,6 @@ namespace :deploy do
     end
   end
 
-  #TODO uncomment when Solr work
-  #before :finishing, :reboot_solr
-  #after :finishing, :reindex_solr
+  before :finishing, :reboot_solr
+  after :finishing, :reindex_solr
 end

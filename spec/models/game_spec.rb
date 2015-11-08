@@ -14,6 +14,7 @@ RSpec.describe Game, type: :model do
   it { is_expected.to respond_to(:players_amount) }
   it { is_expected.to respond_to(:events) }
   it { is_expected.to respond_to(:subscriptions) }
+  it { is_expected.to respond_to(:solr_index_data) }
 
   context '#subscribe' do
     it 'user with player role' do
@@ -49,5 +50,11 @@ RSpec.describe Game, type: :model do
   it '#subscribed? check if user subscribed' do
     subject.subscribe(user)
     expect(subject.user_subscribed?(user)).to eq true
+  end
+
+  context 'Solr' do
+    it 'takes proper #solr_index_data' do
+      expect(subject.solr_index_data).to eq({ctext: subject.title, id: subject.id})
+    end
   end
 end

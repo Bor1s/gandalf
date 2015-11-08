@@ -12,3 +12,5 @@
 !/log/.keep
 /tmp
 /public/uploads/
+/solr
+/config/sunspot.yml

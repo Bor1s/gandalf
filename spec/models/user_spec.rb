@@ -20,4 +20,10 @@ RSpec.describe User, type: :model do
     game.subscribe(subject)
     expect(subject.playable_games.count).to eq 1
   end
+
+  context 'Solr' do
+    it 'takes proper #solr_index_data' do
+      expect(subject.solr_index_data).to eq({usertext: subject.nickname, id: subject.id})
+    end
+  end
 end

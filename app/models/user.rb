@@ -1,6 +1,7 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
+  include SolrService::MongoidHooks
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -58,5 +59,12 @@ class User
   # TODO Write specs
   def creator?(game)
     subscriptions.where(game_id: game.id, user_role: Subscription::USER_ROLE[:master]).first.present?
+  end
+
+  # NOTE Fileds to be indexed by Solr
+  def solr_index_data
+    data = {id: self.id}
+    data[:usertext] = self.nickname
+    data
   end
 end

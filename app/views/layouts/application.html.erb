@@ -17,6 +17,11 @@
     <div class='row navigation'>
       <div class='col-md-10'>
         <h3 class='pull-left logo'><%= link_to 'AdventureKit', root_path %></h3>
+        <div class='col-md-3 col-md-offset-3'>
+          <%= form_tag '/search', method: :get, role: 'form' do %>
+            <%= text_field_tag 'q', nil, class: 'form-control', placeholder: 'Search adventurekit ...' %>
+          <% end %>
+        </div>
         <nav role="navigation" class='pull-right'>
           <ul class='nav nav-pills'>
             <li class='<%= active?(games_path) %>'><%= link_to t('.games'), games_path %></li>
