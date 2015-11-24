@@ -44,7 +44,7 @@ class Game
   # NOTE Fileds to be indexed by Solr
   def solr_index_data
     data = {id: self.id}
-    data[:ctext] = self.title
+    data[:ctext] = RSolr.solr_escape(self.title)
     data
   end
 end

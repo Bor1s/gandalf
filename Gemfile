@@ -37,6 +37,8 @@ gem 'devise-i18n'
 gem "select2-rails"
 gem 'exception_notification'
 gem 'rsolr'
+gem 'sprockets-coffee-react'
+gem "i18n-js", ">= 3.0.0.rc11"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

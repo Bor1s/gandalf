@@ -6,9 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>AdventureKit</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+
+  <script type="text/javascript">
+    I18n = {};
+    I18n.defaultLocale = "<%= I18n.default_locale %>";
+    I18n.locale = "<%= I18n.locale %>";
+  </script>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
 </head>
 <body>
 
@@ -17,11 +28,7 @@
     <div class='row navigation'>
       <div class='col-md-10'>
         <h3 class='pull-left logo'><%= link_to 'AdventureKit', root_path %></h3>
-        <div class='col-md-3 col-md-offset-3'>
-          <%= form_tag '/search', method: :get, role: 'form' do %>
-            <%= text_field_tag 'q', nil, class: 'form-control', placeholder: 'Search adventurekit ...' %>
-          <% end %>
-        </div>
+        <nav class='col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-xs-4 col-xs-offset-2' id='JS_react'></nav>
         <nav role="navigation" class='pull-right'>
           <ul class='nav nav-pills'>
             <li class='<%= active?(games_path) %>'><%= link_to t('.games'), games_path %></li>
@@ -48,7 +55,7 @@
     </div>
 
     <div class='row'>
-      <section class='col-md-12'>
+      <section id='JS_inner-content' class='col-md-12'>
         <%= render 'messages' %>
         <%= yield %>
       </section>

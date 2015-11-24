@@ -64,7 +64,7 @@ class User
   # NOTE Fileds to be indexed by Solr
   def solr_index_data
     data = {id: self.id}
-    data[:usertext] = self.nickname
+    data[:usertext] = RSolr.solr_escape(self.nickname.to_s)
     data
   end
 end

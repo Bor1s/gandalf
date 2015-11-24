@@ -1,0 +1,17 @@
+<%= link_to t('.new_game'), new_game_path, class: 'btn btn-success' if user_signed_in? %>
+<% events.group_by {|e| e.beginning_at.to_date}.each do |day, _events| %>
+  <div class='row'>
+    <div class='col-md-12 group'>
+      <center>
+        <p class='lead day'>
+          <strong class='text-capitalize'>
+            <%= l(day, format: '%d %b') %>
+          </strong>
+        </p>
+      </center>
+    </div>
+    <% _events.each do |event| %>
+      <%= render event.game, event: event %>
+    <% end %>
+  </div>
+<% end %>

@@ -25,12 +25,12 @@ class SolrService
   end
 
   def search_games(text, page: 1)
-    response = @solr.paginate page, PER_PAGE, 'select', params: {q: "ctext:\"#{text}\""}
+    response = @solr.paginate page, PER_PAGE, 'select', params: {q: "ctext:\"#{RSolr.solr_escape(text)}\""}
     @search_result = response['response']['docs'].map {|doc| BSON::ObjectId.from_string(doc['id'])}
   end
 
   def search_users(text, page: 1)
-    response = @solr.paginate page, PER_PAGE, 'select', params: {q: "usertext:\"#{text}\""}
+    response = @solr.paginate page, PER_PAGE, 'select', params: {q: "usertext:\"#{RSolr.solr_escape(text)}\""}
     @search_result = response['response']['docs'].map {|doc| BSON::ObjectId.from_string(doc['id'])}
   end
 

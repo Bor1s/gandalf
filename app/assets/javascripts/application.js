@@ -12,9 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+// require turbolinks
 //= require bootstrap-sprockets
 //= require cocoon
 //= require jquery.datetimepicker
 //= require select2
-//= require_tree .
+//= require i18n
+//= require i18n/translations
+//= require init
+//= require react_test
+
+
+// require_tree .

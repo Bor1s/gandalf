@@ -1,4 +1,7 @@
 ru:
+  common: &common
+    no_games: 'На ближайшее время игр не запланировано.'
+
   application:
     signin:
       signin: 'Вход'
@@ -7,6 +10,7 @@ ru:
       edit: 'Редактировать игру'
       enroll: 'Присоединиться'
       unenroll: 'Покинуть игру'
+    search: 'Поиск игр в Adventurekit ...'
   games:
     new:
       create_game: 'Создать игру'
@@ -19,10 +23,12 @@ ru:
       secondary: 'Игровые сессии'
     event_fields:
       remove_event: 'Удалить сессию'
-    index:
+    event_groups:
       new_game: 'Создать игру'
-      no_games: 'На ближайшее время игр не запланировано.'
+      <<: *common
+    no_games:
       create_game: 'Создайте свою'
+      <<: *common
     game:
       by: 'мастер'
       help:

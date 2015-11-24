@@ -1,0 +1,8 @@
+<div class='row'>
+  <div class='col-md-12 text-center'>
+    <%= t('.no_games') %> 
+    <% if user_signed_in? %>
+      <%= link_to t('.create_game'), new_game_path %>
+    <% end %>
+  </div>
+</div>

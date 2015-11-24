@@ -11,7 +11,7 @@ RSpec.describe SearchController, type: :controller do
     end
 
     it 'triggers SearchService' do
-      expect(SearchService).to receive(:search).with('search text')
+      expect(SearchService).to receive(:search).with('search text').and_return([])
       get :index, q: 'search text'
     end
   end

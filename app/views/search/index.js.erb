@@ -1,0 +1,5 @@
+<% if @events.present? %>
+  $('#JS_inner-content').html('<%= raw(j render 'games/event_groups', events: @events) %>');
+<% else %>
+  $('#JS_inner-content').html('<%= raw(j render 'games/no_games') %>');
+<% end %>

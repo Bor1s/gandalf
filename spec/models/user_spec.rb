@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
 
   context 'Solr' do
     it 'takes proper #solr_index_data' do
-      expect(subject.solr_index_data).to eq({usertext: subject.nickname, id: subject.id})
+      expect(subject.solr_index_data).to eq({usertext: subject.nickname.to_s, id: subject.id})
     end
   end
 end
