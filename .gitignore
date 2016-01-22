@@ -14,3 +14,4 @@
 /public/uploads/
 /solr
 /config/sunspot.yml
+/vendor/bundle/*

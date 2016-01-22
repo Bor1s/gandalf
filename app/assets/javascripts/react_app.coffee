@@ -1,8 +1,7 @@
-globalReactInit = ->
+initReactApp = ->
   SearchField = React.createClass({
     changeHandler: (event)->
       self = this
-      # Send value via ajax to server
       $.ajax
         url: self.props.url
         data:
@@ -28,7 +27,7 @@ globalReactInit = ->
   );
 
 $ ->
-  globalReactInit()
+  initReactApp()
 
 $(document).on 'page:load', ->
-  globalReactInit()
+  initReactApp()

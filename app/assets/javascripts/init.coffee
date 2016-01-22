@@ -20,9 +20,10 @@ App._initDatepicker = ->
 App._initSelect2 = ->
   $('.select2').select2()
 
-#Global initialization
+# JS Application init for turbolincks
 $(document).on 'page:load', ->
   App.init()
 
+# Regular JS Application init
 $ ->
   App.init()
